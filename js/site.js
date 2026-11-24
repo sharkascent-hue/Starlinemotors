@@ -23,6 +23,7 @@ if(intro){
 /* ---------- nav ---------- */
 const bg=$('.burger'),menu=$('#menu');
 if(bg){bg.onclick=()=>{const o=menu.classList.toggle('open');bg.setAttribute('aria-expanded',o);document.body.classList.toggle('lock',o)}}
+if(menu){menu.addEventListener('click',e=>{if(e.target.closest('a')){menu.classList.remove('open');document.body.classList.remove('lock');bg.setAttribute('aria-expanded',false)}});addEventListener('pageshow',()=>{menu.classList.remove('open');document.body.classList.remove('lock');bg.setAttribute('aria-expanded',false)})}
 $$('[data-yr]').forEach(e=>e.textContent=new Date().getFullYear());
 $$('[data-n=rating]').forEach(e=>e.textContent=D.rating.toFixed(1));
 $$('[data-n=total]').forEach(e=>e.textContent=D.total);

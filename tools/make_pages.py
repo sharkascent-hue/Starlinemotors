@@ -7,7 +7,7 @@ import json, os, html, re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = json.loads(open(os.path.join(ROOT, 'data.js'), encoding='utf8').read().split('=', 1)[1].rstrip().rstrip(';'))
 e = html.escape
-V = '5'  # bump to bust the browser cache for css/js
+V = '8'  # bump to bust the browser cache for css/js
 
 PH = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>'
 WAI = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.600 15.100L2 22l5-1.300A10 10 0 1 0 12 2zm5.800 14.200c-.200.700-1.400 1.300-1.900 1.400-.500.100-1.100.100-1.800-.100-.400-.100-1-.300-1.600-.600-2.900-1.200-4.700-4.100-4.900-4.300-.100-.200-1.200-1.500-1.200-2.900s.700-2.100 1-2.400c.300-.300.600-.300.800-.300h.500c.200 0 .400-.100.700.500l.900 2.200c.100.200.100.400 0 .600l-.300.500-.500.500c-.200.200-.300.300-.100.600.200.300.800 1.300 1.700 2.100 1.200 1 2.100 1.400 2.400 1.500.300.100.500.100.600-.100l.800-1c.200-.300.400-.200.700-.100l2 1c.300.100.500.200.600.300.100.300.100.800-.100 1.400z"/></svg>'
@@ -61,13 +61,14 @@ FAQ_SALES = [
  ('Can I schedule a test drive?','Of course! Test drives are available by appointment. Reach out to book yours today.'),
  ('Do you deliver cars?','Yes, we offer delivery options for your convenience. Contact us to learn more.'),
 ]
-NAV = [('services','Car Clinic'),('cars','Cars for Sale'),('about','About'),('reviews','Reviews'),('faq','FAQ'),('contact','Contact')]
+NAV = [('services','Car Clinic'),('cars','Cars for Sale'),('finance','Finance'),('trade-in','Trade-in'),('about','About'),('reviews','Reviews'),('blog','Blog'),('faq','FAQ'),('contact','Contact')]
 MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 from urllib.parse import quote
+SLUG = dict(zip([s[0] for s in SERVICES], ['gearbox','suspension','exhaust','fuel-system','diagnostics','engine','brakes','battery','nct','timing-belt','servicing']))
 
 def ico(k): return f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.600" stroke-linecap="round" stroke-linejoin="round">{ICONS[k]}</svg>'
 def svc_cards(items, start=0):
-    return ''.join(f'<a class="card rvl" style="--d:{(i%4)*.06}s" href="contact?type=service&amp;service={quote(s[3])}"><span class="no">{start+i+1:02d}</span><div class="ico">{ico(s[1])}</div><h3>{e(s[0])}</h3><p>{e(s[2])}</p><span class="link">Book this job</span></a>' for i, s in enumerate(items))
+    return ''.join(f'<a class="card rvl" style="--d:{(i%4)*.06}s" href="service-{SLUG[s[0]]}"><span class="no">{start+i+1:02d}</span><div class="ico">{ico(s[1])}</div><h3>{e(s[0])}</h3><p>{e(s[2])}</p><span class="link">Learn more</span></a>' for i, s in enumerate(items))
 def review(r):
     y, m, _ = r['date'].split('-'); body = re.sub(r'^[⭐\s]+', '', r['body'])
     return f'<figure class="rv rvl"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>{e(body)}</blockquote><figcaption><span class="av">{e(r["name"][0].upper())}</span><span><b>{e(r["name"])}</b><small>Google review · {MON[int(m)-1]} {y}</small></span></figcaption></figure>'
@@ -110,9 +111,10 @@ def page(slug, title, desc, body, intro=False):
 <header class="nav"><div class="wrap">
   <a class="brand" href="./" aria-label="Starline Motors home"><img src="img/logo.webp" alt="Starline Motors" width="720" height="254"></a>
   <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
-  <nav class="links" id="menu" aria-label="Main">{nav}</nav>
+  <nav class="links desk" aria-label="Main">{nav}</nav>
   <a class="btn btn-red btn-sm call" href="contact?type=service">Book in</a>
 </div></header>
+<nav class="mmenu" id="menu" aria-label="Mobile">{nav}<div class="mm-cta"><a class="btn btn-red" href="contact?type=service">Book in</a><a class="btn btn-ghost" href="tel:+353857553430">{PH}085 755 3430</a></div></nav>
 <main id="main">
 {body}
 </main>
@@ -127,7 +129,7 @@ def page(slug, title, desc, body, intro=False):
         <a href="https://wa.me/353857553430" target="_blank" rel="noopener" aria-label="WhatsApp">{WAI}</a>
       </div>
     </div>
-    <div><h4>EXPLORE</h4><ul><li><a href="services">Car Clinic services</a></li><li><a href="cars">Cars for sale</a></li><li><a href="about">About us</a></li><li><a href="reviews">Reviews</a></li><li><a href="faq">FAQ</a></li></ul></div>
+    <div><h4>EXPLORE</h4><ul><li><a href="services">Car Clinic services</a></li><li><a href="cars">Cars for sale</a></li><li><a href="finance">Finance</a></li><li><a href="trade-in">Trade-in</a></li><li><a href="about">About us</a></li><li><a href="reviews">Reviews</a></li><li><a href="blog">Blog</a></li><li><a href="faq">FAQ</a></li><li><a href="privacy">Privacy</a></li></ul></div>
     <div><h4>CONTACT</h4><ul><li><a href="tel:+353857553430">085 755 3430</a></li><li><a href="tel:+353852258335">Sales: 085 225 8335</a></li><li><a href="mailto:starlinemotorssales@gmail.com">starlinemotorssales@gmail.com</a></li><li><a href="contact">Book in</a></li></ul></div>
     <div><h4>VISIT</h4><ul><li>Greenhills Road, Kilnamanagh</li><li>Dublin 12, D12 K303</li><li>Car Clinic 09:00 – 18:00</li><li>Sales 09:00 – 17:00</li></ul></div>
   </div>
@@ -322,6 +324,140 @@ contact = f'''
 </div></section>
 '''
 
+
+# ---------------- SERVICE DETAIL PAGES ----------------
+DETAIL = {
+ 'gearbox': (['Crunching or grinding when changing gear','Slipping out of gear or delayed engagement','A burning smell or fluid leaking under the car','Clutch biting high or juddering'],
+             ['Road test and fault diagnosis','Gearbox and clutch repair or replacement','Gearbox oil and filter service','Quality parts fitted with a fast turnaround']),
+ 'suspension': (['A bumpy or bouncy ride','Knocking or clunking over bumps','The car pulling to one side','Uneven tyre wear'],
+             ['Full suspension inspection','Shock absorbers, springs and top mounts','Bushes, ball joints and drop links','A check that everything is road-ready and NCT-ready']),
+ 'exhaust': (['A louder exhaust than usual','Rattling from under the car','A smell of fumes in the cabin','Poor performance or an emissions fail at the NCT'],
+             ['Exhaust inspection and leak check','Repair or replacement of sections and mounts','Emissions-related faults diagnosed','Work to help the car pass its emissions test']),
+ 'fuel-system': (['Poor fuel economy','Difficulty starting','Hesitation or loss of power','The engine cutting out or running rough'],
+             ['Fuel system diagnosis','Filters, pumps and injectors checked','Leaks traced and repaired','A clear recommendation before any work begins']),
+ 'diagnostics': (['A warning light on the dash','A fault you cannot pin down','The car going into limp mode','An intermittent problem that comes and goes'],
+             ['Computer diagnostics and fault code read','Hands-on checks to confirm the cause','A plain-English explanation of what we found','A recommendation and quote for the repair']),
+ 'engine': (['Warning lights or loss of power','Unusual noises, knocking or ticking','Smoke from the exhaust','Overheating or oil and coolant loss'],
+             ['Engine diagnosis','Repairs from oil changes to complete engine overhauls','Timing belt and water pump work','Quality parts, OE standard']),
+ 'brakes': (['Squealing or grinding when braking','A soft or spongy brake pedal','The car pulling to one side under braking','Vibration through the pedal or steering wheel'],
+             ['Brake inspection','Brake pad and rotor replacement','Brake line repair','Everything checked and road-tested']),
+ 'battery': (['Slow cranking on cold mornings','The car needing a jump start','A battery warning light','Electrics dimming or cutting out'],
+             ['Battery and charging system test','A reliable replacement battery supplied','Quick installation','Warranty on the battery fitted']),
+ 'nct': (['Your NCT date is coming up','The car failed and needs work before the re-test','A warning light that will not go away','You want peace of mind before the test'],
+             ['Pre-NCT check of the common fail items','Issues addressed before the test','Post-NCT repairs if the car has failed','Everything verified road-ready afterwards']),
+ 'timing-belt': (['The belt is due by age or mileage','You have no record of it being changed','A ticking or whirring noise from the engine','You have just bought a used car with no belt history'],
+             ['Timing belt replacement','Quality parts and expert installation','Related parts checked while we are in there','Protection against costly engine damage']),
+ 'servicing': (['It is six months or 5,000 miles since the last oil change','A service light on the dash','An NCT coming up','You have just bought the car and want a fresh start'],
+             ['Oil and filter change','Tune-ups and routine checks','Fluids, brakes and tyres looked over','Advice on anything that needs attention soon']),
+}
+def li(items): return ''.join(f'<li>{e(x)}</li>' for x in items)
+SERVICE_PAGES = []
+for i, s in enumerate(SERVICES):
+    slug = SLUG[s[0]]; signs, does = DETAIL[slug]
+    others = [x for x in SERVICES if x[0] != s[0]]
+    others = (others[i:] + others[:i])[:4]
+    body = f"""
+{hero_small("The Car Clinic · Service", e(s[0]), e(s[2]), VID("clinic"))}
+<section class="light"><div class="wrap"><div class="two">
+  <div class="rvl"><span class="eyebrow">When to book it in</span><h2 class="h2s">Signs it needs <em>a look</em></h2><ul class="feats one">{li(signs)}</ul></div>
+  <div class="rvl" style="--d:.1s"><span class="eyebrow">What we do</span><h2 class="h2s">How we <em>sort it</em></h2><ul class="feats one">{li(does)}</ul>
+    <p class="note">One hour bay booking to start. Price varies by vehicle, and we give you a detailed estimate before any work begins.</p>
+    <div class="cta" style="margin-top:22px"><a class="btn btn-red" href="contact?type=service&amp;service={quote(s[3])}">Book this job <span class="ar">→</span></a><a class="btn btn-out" href="tel:+353857553430">Call 085 755 3430</a></div></div>
+</div></div></section>
+<section class="ink2"><div class="wrap">
+  <div class="sec-h rvl"><div><span class="eyebrow">More from the Car Clinic</span><h2 class="sil">Other <em>services</em></h2></div><a class="btn btn-ghost" href="services">All services <span class="ar">→</span></a></div>
+  <div class="svc dark-cards">{svc_cards(others)}</div>
+</div></section>
+{band("Book it <em>in</em>","Tell us what the car is doing and we will confirm a slot.",f'<a class="btn btn-red" href="contact?type=service&amp;service={quote(s[3])}">Book this job <span class="ar">→</span></a>',CALL)}
+"""
+    SERVICE_PAGES.append(('service-' + slug, f'{s[0]} in Dublin 12 | Car Clinic at Starline Motors', s[2], body, False))
+
+# ---------------- FINANCE / TRADE-IN ----------------
+def steps(items): return '<div class="steps">' + ''.join(f'<article class="rvl" style="--d:{i*.08}s"><b>{i+1:02d}</b><h3>{e(t)}</h3><p>{e(d)}</p></article>' for i, (t, d) in enumerate(items)) + '</div>'
+finance = f"""
+{hero_small("Car finance","Drive it now, <em>pay monthly</em>","We offer financing options through various banks and financing companies. Tell us the car and your budget and we will talk you through it.",'<img src="img/hero.webp" alt="">')}
+<section class="light"><div class="wrap">
+  <div class="sec-h rvl"><div><span class="eyebrow">How it works</span><h2>Finance in <em>three steps</em></h2></div><p>Clear and honest advice without any unnecessary pressure. Finance is subject to approval, terms and conditions apply.</p></div>
+  {steps([("Pick your car","Browse the stock and choose the car that suits you, or tell us what you are looking for."),("Talk to us","Contact us with the car and your budget. We will explain the finance options available through the banks and finance companies we work with."),("Drive away","Once you are approved and happy, we get the car fully serviced and ready for you to collect.")])}
+  <div class="cta rvl" style="margin-top:34px"><a class="btn btn-red" href="contact?type=general">Ask about finance <span class="ar">→</span></a><a class="btn btn-out" href="cars">View cars</a><a class="btn btn-out" href="trade-in">Trading in?</a></div>
+</div></section>
+<section class="ink2"><div class="wrap"><div class="sec-h rvl"><div><span class="eyebrow">In stock now</span><h2 class="sil">Cars you could <em>finance</em></h2></div><a class="btn btn-ghost" href="cars">See all cars <span class="ar">→</span></a></div><div class="grid dark-cars hscroll" id="featured"></div></div></section>
+{band("Questions about <em>finance?</em>","Call the sales team between 9am and 7pm, or send us a message.",'<a class="btn btn-red" href="tel:+353852258335">Sales: 085 225 8335</a>','<a class="btn btn-ghost" href="contact?type=general">Message us</a>')}
+"""
+tradein = f"""
+{hero_small("Trade-ins","Trade in your <em>current car</em>","Yes, we accept trade-ins. Contact us with information on your current vehicle and we’ll provide a trade-in value.",'<img src="img/clinic.webp" alt="">')}
+<section class="light"><div class="wrap">
+  <div class="sec-h rvl"><div><span class="eyebrow">How it works</span><h2>Simple from <em>start to finish</em></h2></div><p>Put the value of your current car towards your next one.</p></div>
+  {steps([("Tell us about your car","Send us the make, model, year, mileage and reg, along with a few photos if you have them."),("Get a trade-in value","We will come back to you with a trade-in value for your vehicle."),("Choose your next car","Put that value towards any car in stock. Finance is available on the balance if you need it.")])}
+  <div class="cta rvl" style="margin-top:34px"><a class="btn btn-red" href="contact?type=general">Get a trade-in value <span class="ar">→</span></a><a class="btn btn-wa" href="https://wa.me/353857553430" target="_blank" rel="noopener">{WAI}Send photos on WhatsApp</a><a class="btn btn-out" href="cars">View cars</a></div>
+</div></section>
+{band("Ready for <em>a change?</em>","Tell us what you are driving and what you would like to be driving.",'<a class="btn btn-red" href="contact?type=general">Get in touch <span class="ar">→</span></a>',VIEW)}
+"""
+
+# ---------------- BLOG ----------------
+POSTS = [
+ ('blog-nct-checklist','How to get your car ready for the NCT','NCT','shop-38','A few simple checks before test day can save you a re-test. Here is what to look at yourself, and what is worth leaving to a garage.',
+  [('h','Check the simple things first'),('p','A lot of NCT fails come down to small things you can check at home in ten minutes. Walk around the car with the lights on and make sure every bulb works, including brake lights, indicators, fog lights and the number plate light. Check that the wipers clear the screen properly and the washer bottle is full.'),
+   ('h','Tyres'),('p','Look at all four tyres for cuts, bulges and uneven wear, and check the tread depth across the full width of the tyre. Uneven wear can also point to a suspension or tracking problem that is worth sorting before the test.'),
+   ('h','Warning lights'),('p','A warning light that stays on is worth having diagnosed before the test rather than after. A diagnostic check will tell you what the car is complaining about so you can fix the cause instead of guessing.'),
+   ('h','Brakes, suspension and emissions'),('p','These are the areas where a garage earns its keep. A pre-NCT check looks at the items that commonly cause a fail, so issues are dealt with beforehand. If the car has already failed, post-NCT repairs get it sorted and verified road-ready for the re-test.'),
+   ('c','Book a pre-NCT check','contact?type=service&service=Pre%20NCT')]),
+ ('blog-timing-belt','Timing belts: why they matter and when to change one','Maintenance','shop-46','The timing belt is one of the cheapest ways to avoid one of the most expensive repairs. Here is what it does and how to know when it is due.',
+  [('h','What the timing belt does'),('p','The timing belt keeps the top and bottom halves of the engine moving in step. If it snaps while the engine is running, the valves and pistons can collide, and the repair bill can be more than an older car is worth.'),
+   ('h','When is it due?'),('p','Every engine has its own interval, set by the manufacturer in both years and mileage, and it is whichever comes first. If you have just bought a used car and there is no record of the belt being changed, treat it as due.'),
+   ('h','What to listen for'),('p','A ticking or whirring noise from the front of the engine is worth having checked, but most belts give no warning at all before they fail. That is why the service record matters more than how the car sounds.'),
+   ('h','Getting it done'),('p','A professional timing belt replacement with quality parts keeps the engine running smoothly and prevents costly damage. While the belt is off, it makes sense to check the related parts at the same time.'),
+   ('c','Book a timing belt','contact?type=service&service=Timing%20Belt')]),
+ ('blog-brake-signs','Five signs your brakes need attention','Safety','shop-8','Brakes rarely fail without telling you first. These are the signs to watch for, and why it is cheaper to act early.',
+  [('h','1. Squealing or grinding'),('p','A high-pitched squeal usually means the pads are getting low. Grinding means they may be worn through to the metal, which damages the discs as well.'),
+   ('h','2. A soft or spongy pedal'),('p','If the pedal travels further than it used to, or feels soft, have it checked. It can point to a problem in the brake lines or fluid.'),
+   ('h','3. Pulling to one side'),('p','If the car pulls left or right when you brake, one side is doing more work than the other.'),
+   ('h','4. Vibration through the pedal'),('p','A judder through the pedal or steering wheel under braking often points to the discs.'),
+   ('h','5. A warning light'),('p','A brake warning light on the dash should never be ignored.'),
+   ('p','Don’t neglect your brakes. Brake services at the Car Clinic include brake pad and rotor replacement, brake line repair, and more. Catching worn pads early is far cheaper than replacing pads and discs together.'),
+   ('c','Book a brake check','contact?type=service&service=Brakes')]),
+ ('blog-used-car-checklist','Buying a used car: what to check before you commit','Buying','shop-28','A short checklist for viewing a used car, from paperwork to the test drive, so you buy with confidence.',
+  [('h','Start with the history'),('p','Ask about the number of owners, the service history and when the NCT runs to. Check how many keys come with the car. A car that has been motor checked gives you a clearer picture of its past.'),
+   ('h','Look it over in daylight'),('p','View the car in good light. Look along the panels for mismatched paint, check the tyres for even wear, and look inside for wear that matches the mileage.'),
+   ('h','Take a proper test drive'),('p','Drive it on roads you know. Listen for knocks over bumps, check the gearbox changes smoothly, and make sure the car brakes in a straight line. Try everything: windows, air conditioning, parking sensors and the infotainment.'),
+   ('h','Ask what comes with it'),('p','Find out whether the car has been serviced before sale and what warranty is included. Cars at Starline Motors come fully serviced and ready to go, and test drives are available by appointment.'),
+   ('h','Think about the next few years'),('p','Buying from somewhere with a garage on-site means the people who sold you the car can also look after it. With the Car Clinic at Starline Motors, servicing, repairs and NCT prep are all under one roof.'),
+   ('c','View cars in stock','cars')]),
+]
+def post_body(blocks):
+    out = ''
+    for b in blocks:
+        if b[0] == 'h': out += f'<h2>{e(b[1])}</h2>'
+        elif b[0] == 'p': out += f'<p>{e(b[1])}</p>'
+        else: out += f'<p style="margin-top:30px"><a class="btn btn-red" href="{b[2]}">{e(b[1])} <span class="ar">→</span></a></p>'
+    return out
+def post_card(p, i=0): return f'<a class="post rvl" style="--d:{i*.06}s" href="{p[0]}"><div class="ph"><img src="img/{p[3]}.webp" alt="" loading="lazy"><span class="badge">{e(p[2])}</span></div><div class="bd"><h3>{e(p[1])}</h3><p>{e(p[4])}</p><span class="link">Read article</span></div></a>'
+blog = f"""
+{hero_small("From the workshop","The Starline <em>blog</em>","Straightforward advice on looking after your car and buying your next one.",'<img src="img/shop-18.webp" alt="">')}
+<section class="light"><div class="wrap"><div class="posts">{"".join(post_card(p, i) for i, p in enumerate(POSTS))}</div></div></section>
+{band("Need a <em>hand?</em>","If something in these guides sounds familiar, book the car in and we will take a look.",BOOK,CALL)}
+"""
+BLOG_PAGES = [('blog','Blog: Car Care & Buying Advice' + ' | Starline Motors & Car Clinic, Dublin 12','Car care and used car buying advice from Starline Motors and the Car Clinic on Greenhills Road.',blog,False)]
+for i, p in enumerate(POSTS):
+    rest = [x for x in POSTS if x[0] != p[0]][:3]
+    body = f"""
+{hero_small(e(p[2]) + " · Blog", e(p[1]), e(p[4]), f'<img src="img/{p[3]}.webp" alt="">')}
+<section class="light"><div class="wrap"><article class="prose rvl"><p class="crumb"><a href="blog">← All articles</a></p>{post_body(p[5])}</article></div></section>
+<section class="ink2"><div class="wrap"><div class="sec-h rvl"><div><span class="eyebrow">Keep reading</span><h2 class="sil">More <em>articles</em></h2></div><a class="btn btn-ghost" href="blog">All articles <span class="ar">→</span></a></div><div class="posts dark">{"".join(post_card(x, j) for j, x in enumerate(rest))}</div></div></section>
+"""
+    BLOG_PAGES.append((p[0], p[1] + ' | Starline Motors Blog', p[4], body, False))
+
+privacy = f"""
+{hero_small("Privacy","Privacy <em>policy</em>","What this website does and does not do with your information.",'<img src="img/hero.webp" alt="">')}
+<section class="light"><div class="wrap"><article class="prose">
+<h2>Who we are</h2><p>This website is operated by Starline Motors, Greenhills Road, Kilnamanagh, Dublin 12, D12 K303. You can contact us at starlinemotorssales@gmail.com or on 085 755 3430.</p>
+<h2>The contact and booking form</h2><p>The form on this website does not send your details to a server. When you press send, it opens WhatsApp or your own email app with your message filled in, and you choose whether to send it. Once sent, we use the details you give us only to reply to you and arrange your booking, viewing or enquiry.</p>
+<h2>Cookies and tracking</h2><p>This website does not set advertising or analytics cookies. It remembers, for the length of your visit only, that you have seen the opening animation.</p>
+<h2>Third-party services</h2><p>The contact page shows a Google map, fonts are loaded from Google Fonts, and links to WhatsApp, Facebook, Instagram and Google open those services. Those companies have their own privacy policies.</p>
+<h2>Your rights</h2><p>You can ask us what information we hold about you, or ask us to correct or delete it, by contacting us using the details above.</p>
+</article></div></section>
+"""
+
 T = ' | Starline Motors & Car Clinic, Dublin 12'
 PAGES = [
  ('index','Starline Motors & Car Clinic | Garage, NCT Repairs & Used Cars, Greenhills Road Dublin 12','Starline Motors and the Car Clinic on Greenhills Road, Dublin 12. Servicing, diagnostics, pre and post NCT, brakes, gearbox, timing belts and quality used cars and commercials.',home,True),
@@ -331,10 +467,15 @@ PAGES = [
  ('about','About Starline Motors'+T,'More than just a car dealership: quality used cars and expert after-sales care at the on-site Car Clinic on Greenhills Road.',about,False),
  ('reviews','Customer Reviews'+T,'Read Google reviews from Starline Motors and Car Clinic customers in Dublin.',reviews,False),
  ('faq','FAQ'+T,'Answers to common questions about servicing, repairs, finance, trade-ins and test drives at Starline Motors.',faq_page,False),
+ ('finance','Car Finance'+T,'Car finance on quality used cars at Starline Motors, Greenhills Road, Dublin 12, through various banks and finance companies.',finance,False),
+ ('trade-in','Trade In Your Car'+T,'Trade in your current car at Starline Motors. Send us the details and we will provide a trade-in value.',tradein,False),
+ ('privacy','Privacy Policy'+T,'How the Starline Motors website handles your information.',privacy,False),
  ('contact','Contact & Booking'+T,'Book a service, viewing or test drive at Starline Motors and the Car Clinic, Greenhills Road, Dublin 12. Call 085 755 3430.',contact,False),
 ]
+PAGES += SERVICE_PAGES + BLOG_PAGES
 for slug, title, desc, body, intro in PAGES:
-    out = page('' if slug == 'index' else slug, title, desc, body, intro)
+    cur = '' if slug == 'index' else ('services' if slug.startswith('service-') else 'blog' if slug.startswith('blog-') else 'cars' if slug == 'car' else slug)
+    out = page(cur, title, desc, body, intro)
     out = re.sub(r'(\d)\.(\d)00\b', r'\1.\2', out)  # tidy svg numbers
     open(os.path.join(ROOT, slug + '.html'), 'w', encoding='utf8').write(out)
     print('wrote', slug + '.html', len(out))
