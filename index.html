@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Starline Motors &amp; Car Clinic | Garage, NCT Repairs &amp; Used Cars, Greenhills Road Dublin 12</title>
+<meta name="description" content="Starline Motors and the Car Clinic on Greenhills Road, Dublin 12. Servicing, diagnostics, pre and post NCT, brakes, gearbox, timing belts and quality used cars and commercials. Book a service or a test drive today.">
+<meta name="theme-color" content="#0b0c0e">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_IE">
+<meta property="og:site_name" content="Starline Motors">
+<meta property="og:title" content="Starline Motors &amp; Car Clinic | Greenhills Road, Dublin 12">
+<meta property="og:description" content="Servicing, repairs, NCT prep and quality used cars and commercials on Greenhills Road.">
+<meta property="og:image" content="img/og.jpg">
+<link rel="icon" href="img/icon-48.png" sizes="48x48">
+<link rel="apple-touch-icon" href="img/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.webp">
+<style>
+:root{
+  --bg:#0b0c0e; --bg2:#111316; --panel:#16191d; --panel2:#1c2025; --line:#2a2f36; --line2:#3a414a;
+  --txt:#e9ecef; --mut:#9aa3ad; --steel:#c7ccd2; --red:#e2231a; --red2:#ff3b30; --amber:#ffb400; --ok:#2fbf71;
+  --disp:"Barlow Condensed","Arial Narrow",Impact,sans-serif; --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:4px; --max:1240px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:86px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--txt);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+h1,h2,h3,h4{font-family:var(--disp);text-transform:uppercase;line-height:1;margin:0;letter-spacing:.01em;text-wrap:balance}
+p{margin:0 0 1em}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+
+/* textures */
+.hazard{height:10px;background:repeating-linear-gradient(-45deg,var(--amber) 0 14px,#111 14px 28px)}
+.plate{background-color:var(--bg2);background-image:
+  linear-gradient(45deg,rgba(255,255,255,.035) 25%,transparent 25%,transparent 75%,rgba(255,255,255,.035) 75%),
+  linear-gradient(45deg,rgba(255,255,255,.035) 25%,transparent 25%,transparent 75%,rgba(255,255,255,.035) 75%);
+  background-size:22px 22px;background-position:0 0,11px 11px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 26px;border:2px solid transparent;border-radius:var(--r);
+  font:700 18px/1 var(--disp);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:transform .15s,background .15s,border-color .15s,color .15s;white-space:nowrap}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 8px 24px -10px var(--red)}
+.btn-red:hover{background:var(--red2);transform:translateY(-2px)}
+.btn-line{border-color:var(--line2);background:rgba(255,255,255,.03)}
+.btn-line:hover{border-color:var(--steel);transform:translateY(-2px)}
+.btn-wa{background:#1faa59;color:#fff}.btn-wa:hover{background:#25c466;transform:translateY(-2px)}
+.btn-sm{padding:10px 16px;font-size:16px}
+
+/* top bar + nav */
+.top{background:#000;border-bottom:1px solid var(--line);font-size:14px;color:var(--mut)}
+.top .wrap{display:flex;gap:22px;align-items:center;justify-content:space-between;min-height:38px;flex-wrap:wrap}
+.top a{text-decoration:none;color:var(--steel)}.top a:hover{color:#fff}
+.top span.i{display:inline-flex;align-items:center;gap:7px}
+.top svg{width:15px;height:15px;color:var(--red)}
+.top .grp{display:flex;gap:22px;flex-wrap:wrap}
+header.nav{position:sticky;top:0;z-index:50;background:rgba(11,12,14,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;gap:26px;height:74px}
+.brand{display:flex;align-items:center;flex:none}
+.brand img{height:54px;width:auto}
+nav.links{display:flex;gap:4px;margin-left:auto}
+nav.links a{font:600 17px/1 var(--disp);letter-spacing:.09em;text-transform:uppercase;text-decoration:none;color:var(--steel);padding:12px 12px;position:relative}
+nav.links a::after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .2s}
+nav.links a:hover,nav.links a.on{color:#fff}nav.links a:hover::after,nav.links a.on::after{transform:scaleX(1)}
+.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line2);border-radius:var(--r);width:46px;height:46px;padding:0;place-items:center}
+.burger span{display:block;width:20px;height:2px;background:#fff;margin:4px auto;transition:.2s}
+.burger[aria-expanded=true] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* hero */
+.hero{position:relative;min-height:min(86vh,820px);display:flex;align-items:flex-end;overflow:hidden;background:#000 url(img/hero.webp) center/cover no-repeat}
+.hero .vid{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.hero .vid iframe{position:absolute;top:50%;left:50%;width:max(100%,177.78vh);height:max(100%,56.25vw);transform:translate(-50%,-50%);border:0;opacity:0;transition:opacity 1.2s}
+.hero .vid iframe.rdy{opacity:1}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,7,8,.94) 0,rgba(6,7,8,.78) 42%,rgba(6,7,8,.25) 100%),linear-gradient(0deg,var(--bg) 0,transparent 34%)}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-top:70px;padding-bottom:64px}
+.kicker{display:inline-flex;align-items:center;gap:10px;font:700 16px/1 var(--disp);letter-spacing:.2em;text-transform:uppercase;color:var(--amber)}
+.kicker::before{content:"";width:34px;height:3px;background:var(--red)}
+.hero h1{font-size:clamp(46px,8.2vw,112px);font-weight:800;margin:18px 0 20px;max-width:12ch;letter-spacing:-.005em}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero p.lead{font-size:clamp(17px,1.6vw,21px);color:var(--steel);max-width:56ch;margin-bottom:28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.gauges{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:46px;max-width:880px}
+.gauges div{background:rgba(14,16,18,.86);padding:18px 18px 16px}
+.gauges b{display:block;font:800 40px/1 var(--disp);color:#fff}
+.gauges b i{font-style:normal;color:var(--red)}
+.gauges div>span{font:600 13px/1.25 var(--disp);letter-spacing:.14em;text-transform:uppercase;color:var(--mut);display:block;margin-top:6px}
+
+/* ticker */
+.ticker{display:block;background:var(--red);color:#fff;text-decoration:none;overflow:hidden;border-block:3px solid #000}
+.ticker div{display:flex;width:max-content;animation:tick 30s linear infinite}
+.ticker:hover div{animation-play-state:paused}
+.ticker span{font:700 19px/1 var(--disp);letter-spacing:.14em;text-transform:uppercase;padding:13px 0;white-space:nowrap}
+.ticker span::after{content:"◆";margin:0 26px;opacity:.6}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:96px 0;position:relative}
+.sec-h{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:44px;flex-wrap:wrap}
+.sec-h h2{font-size:clamp(38px,5.4vw,68px);font-weight:800;margin-top:14px}
+.sec-h h2 em{font-style:normal;color:var(--red)}
+.sec-h p{max-width:48ch;color:var(--mut);margin:0}
+.bay{position:absolute;right:24px;top:40px;font:800 clamp(90px,16vw,220px)/.8 var(--disp);color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.06);pointer-events:none;user-select:none}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px 22px;position:relative;display:flex;flex-direction:column;transition:transform .2s,border-color .2s,background .2s;overflow:hidden}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red);transform:scaleY(0);transform-origin:top;transition:transform .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--line2);background:var(--panel2)}.card:hover::before{transform:scaleY(1)}
+.card .ico{width:54px;height:54px;border:1px solid var(--line2);border-radius:var(--r);display:grid;place-items:center;color:var(--red);background:#0e1012;margin-bottom:18px}
+.card .ico svg{width:28px;height:28px}
+.card .no{position:absolute;right:18px;top:16px;font:700 14px/1 var(--disp);letter-spacing:.14em;color:var(--line2)}
+.card h3{font-size:26px;font-weight:700;margin-bottom:10px}
+.card p{color:var(--mut);font-size:16px;flex:1}
+.card button{background:none;border:0;padding:0;font:700 15px/1 var(--disp);letter-spacing:.14em;text-transform:uppercase;color:var(--steel);display:inline-flex;gap:8px;align-items:center;align-self:flex-start}
+.card button:hover{color:var(--red2)}.card button::after{content:"→";transition:transform .2s}.card button:hover::after{transform:translateX(4px)}
+.appt{margin-top:40px;border:1px solid var(--line);border-radius:var(--r);display:grid;grid-template-columns:320px 1fr;overflow:hidden}
+.appt .l{padding:30px;background:#000 url(img/clinicposter.webp) center/cover;position:relative}
+.appt .l::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.74)}
+.appt .l>*{position:relative}
+.appt .l img{width:230px;margin-bottom:16px;mix-blend-mode:screen}
+.appt .l h3{font-size:30px;margin-bottom:10px}
+.appt .l p{color:var(--steel);font-size:15px;margin-bottom:18px}
+.appt ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));background:var(--panel)}
+.appt li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 20px;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.appt li b{font:700 20px/1.1 var(--disp);text-transform:uppercase;letter-spacing:.03em;display:block}
+.appt li small{color:var(--mut);font-size:13px}
+
+/* cars */
+#cars{background:var(--bg2)}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+.tools input,.tools select,form input,form select,form textarea{background:#0d0f11;border:1px solid var(--line2);border-radius:var(--r);color:var(--txt);font:500 16px var(--body);padding:12px 14px;min-height:48px}
+.tools input{flex:1 1 220px}
+.tools input:focus,.tools select:focus,form :is(input,select,textarea):focus{outline:none;border-color:var(--red)}
+.seg{display:inline-flex;border:1px solid var(--line2);border-radius:var(--r);overflow:hidden}
+.seg button{background:none;border:0;padding:0 16px;min-height:46px;font:700 15px/1 var(--disp);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.seg button[aria-pressed=true]{background:var(--red);color:#fff}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 0 18px;scrollbar-width:thin}
+.chips button{flex:none;background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:8px 16px;font:600 15px/1 var(--disp);letter-spacing:.08em;text-transform:uppercase;color:var(--steel)}
+.chips button[aria-pressed=true]{background:#fff;color:#000;border-color:#fff}
+.count{color:var(--mut);font-size:14px;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+.car{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;text-align:left;padding:0;display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+.car:hover{transform:translateY(-4px);border-color:var(--red)}
+.car .ph{aspect-ratio:4/3;background:#000;position:relative;overflow:hidden}
+.car .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.car:hover .ph img{transform:scale(1.05)}
+.car.sold .ph img{filter:grayscale(1) brightness(.55)}
+.stamp{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-12deg);border:4px solid var(--red);color:var(--red);font:800 44px/1 var(--disp);letter-spacing:.14em;padding:6px 18px 4px;background:rgba(0,0,0,.45)}
+.tag{position:absolute;left:10px;top:10px;background:var(--amber);color:#000;font:700 13px/1 var(--disp);letter-spacing:.12em;text-transform:uppercase;padding:6px 9px;border-radius:2px}
+.pc{position:absolute;right:10px;bottom:10px;background:rgba(0,0,0,.7);font-size:12px;padding:3px 8px;border-radius:2px;color:var(--steel)}
+.car .bd{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.car h3{font-size:25px;font-weight:700}
+.specs{display:flex;flex-wrap:wrap;gap:6px}
+.specs span{font:600 13px/1 var(--disp);letter-spacing:.09em;text-transform:uppercase;color:var(--steel);border:1px solid var(--line2);padding:5px 8px;border-radius:2px}
+.car .ft{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px;border-top:1px dashed var(--line2)}
+.price{font:800 30px/1 var(--disp);color:#fff}
+.car.sold .price{color:var(--mut);text-decoration:line-through}
+.more{font:700 14px/1 var(--disp);letter-spacing:.14em;text-transform:uppercase;color:var(--red2)}
+.empty{padding:50px 20px;text-align:center;color:var(--mut);border:1px dashed var(--line2);border-radius:var(--r);grid-column:1/-1}
+
+/* modal */
+dialog{border:1px solid var(--line2);border-radius:6px;background:var(--panel);color:var(--txt);padding:0;width:min(1100px,calc(100vw - 24px));max-height:calc(100dvh - 24px);overflow:hidden}
+dialog::backdrop{background:rgba(0,0,0,.82);backdrop-filter:blur(4px)}
+dialog[open]{display:flex;flex-direction:column}
+.m-x{position:absolute;right:10px;top:10px;z-index:5;width:44px;height:44px;border-radius:50%;border:1px solid var(--line2);background:rgba(0,0,0,.75);font-size:22px;line-height:1}
+.m-body{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);overflow:auto}
+.gal{background:#000;position:sticky;top:0;align-self:start}
+.gal .main{aspect-ratio:4/3;position:relative}
+.gal .main img{width:100%;height:100%;object-fit:contain}
+.gal .arr{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:rgba(0,0,0,.65);font-size:20px}
+.gal .arr.p{left:10px}.gal .arr.n{right:10px}
+.thumbs{display:flex;gap:6px;padding:8px;overflow-x:auto}
+.thumbs button{flex:none;width:76px;aspect-ratio:4/3;padding:0;border:2px solid transparent;background:#000;opacity:.55;border-radius:2px;overflow:hidden}
+.thumbs button[aria-current=true]{border-color:var(--red);opacity:1}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.info{padding:30px 28px 28px;min-width:0}.gal{min-width:0}
+.info h3{font-size:38px;font-weight:800;margin:10px 46px 6px 0}
+.info .sub{color:var(--mut);font-size:15px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:14px}
+.info .price{font-size:46px;margin:14px 0 18px;display:block}
+.info .acts{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.info p{color:var(--steel);font-size:16px}
+.info h4{font-size:19px;letter-spacing:.14em;color:var(--amber);margin:22px 0 10px}
+.info ul{list-style:none;margin:0;padding:0;columns:2 190px;column-gap:20px;font-size:15px;color:var(--steel)}
+.info li{break-inside:avoid;padding:5px 0 5px 20px;position:relative;border-bottom:1px solid var(--line)}
+.info li::before{content:"";position:absolute;left:2px;top:13px;width:8px;height:8px;background:var(--red);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+.info .note{font-size:13px;color:var(--mut);margin-top:18px}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.about p{color:var(--steel)}
+.pill{display:grid;gap:14px}
+.pill article{border:1px solid var(--line);background:var(--panel);padding:24px;border-radius:var(--r);border-left:3px solid var(--red)}
+.pill h3{font-size:25px;margin-bottom:8px}.pill p{margin:0;color:var(--mut);font-size:16px}
+.vidbox{position:relative;aspect-ratio:16/9;background:#000 url(img/clinicposter.webp) center/cover;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-bottom:14px}
+.vidbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vidbox button{position:absolute;inset:0;width:100%;border:0;background:rgba(0,0,0,.35);display:grid;place-items:center}
+.vidbox button span{width:78px;height:78px;border-radius:50%;background:var(--red);display:grid;place-items:center;box-shadow:0 0 0 10px rgba(226,35,26,.25);transition:transform .2s}
+.vidbox button:hover span{transform:scale(1.08)}
+.vidbox svg{width:30px;height:30px;margin-left:4px}
+
+/* reviews */
+#reviews{background:var(--bg2)}
+.rate{display:flex;align-items:center;gap:18px}
+.rate b{font:800 84px/.9 var(--disp)}
+.stars{color:var(--amber);font-size:22px;letter-spacing:3px}
+.rate small{display:block;color:var(--mut);font-size:14px}
+.rv{display:grid;grid-auto-flow:column;grid-auto-columns:min(400px,86vw);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px;scrollbar-width:thin;scrollbar-color:var(--line2) transparent}
+.rv figure{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:24px;scroll-snap-align:start;display:flex;flex-direction:column}
+.rv blockquote{margin:10px 0 18px;color:var(--steel);font-size:16px;white-space:pre-line;flex:1;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:9;overflow:hidden}
+.rv figure.open blockquote{-webkit-line-clamp:unset}
+.rv figcaption{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:14px}
+.av{width:42px;height:42px;border-radius:50%;background:var(--red);display:grid;place-items:center;font:700 20px/1 var(--disp);flex:none}
+.rv figcaption b{display:block;font-weight:600}.rv figcaption small{color:var(--mut)}
+.rv .rm{background:none;border:0;padding:0;color:var(--red2);font-size:14px;align-self:flex-start;margin:-10px 0 14px}
+.rvnav{display:flex;gap:8px}
+.rvnav button{width:48px;height:48px;border:1px solid var(--line2);background:var(--panel);border-radius:var(--r);font-size:20px}
+.rvnav button:hover{border-color:var(--red)}
+
+/* faq */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.faq h3{font-size:28px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.faq h3::before{content:"";width:12px;height:12px;background:var(--red);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+details{border:1px solid var(--line);background:var(--panel);border-radius:var(--r);margin-bottom:8px}
+summary{list-style:none;cursor:pointer;padding:17px 52px 17px 20px;font-weight:600;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);font:600 28px/1 var(--disp);color:var(--red);transition:transform .2s}
+details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+details[open]{border-color:var(--line2)}
+details p{padding:0 20px 18px;margin:0;color:var(--mut);font-size:16px}
+
+/* contact */
+#contact{background:var(--bg2)}
+.contact{display:grid;grid-template-columns:1.1fr .9fr;gap:30px}
+form{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:start}
+form label{display:grid;gap:6px;font:600 14px/1 var(--disp);letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+form label.full,form .full{grid-column:1/-1}
+form textarea{min-height:110px;resize:vertical}
+.types{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.types label{position:relative;display:block}
+.types input{position:absolute;opacity:0;inset:0}
+.types span{display:block;text-align:center;padding:14px 8px;border:1px solid var(--line2);border-radius:var(--r);color:var(--steel);font-size:15px;letter-spacing:.1em;background:#0d0f11}
+.types input:checked+span{background:var(--red);border-color:var(--red);color:#fff}
+.types input:focus-visible+span{outline:2px solid var(--amber);outline-offset:2px}
+form .send{display:flex;gap:10px;flex-wrap:wrap}
+form .send .btn{flex:1 1 200px}
+form .hint{font-size:13px;color:var(--mut);margin:0}
+.side{display:grid;gap:14px;align-content:start}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.box h3{font-size:22px;letter-spacing:.1em;color:var(--amber);margin-bottom:14px}
+.box dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:16px}
+.box dt{color:var(--mut)}.box dd{margin:0;text-align:right}
+.box a.big{font:800 34px/1 var(--disp);text-decoration:none;display:block;letter-spacing:.02em}
+.box a.big:hover{color:var(--red2)}
+.box small{color:var(--mut);display:block;margin-bottom:12px}
+.map{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;aspect-ratio:16/10;background:var(--panel)}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(.9) invert(.92) contrast(.9)}
+
+/* footer */
+footer{background:#000;border-top:1px solid var(--line);padding:56px 0 110px;color:var(--mut);font-size:15px}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px}
+footer h4{font-size:17px;letter-spacing:.16em;color:#fff;margin-bottom:14px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a{text-decoration:none}footer a:hover{color:#fff}
+footer .logos{display:flex;gap:18px;align-items:center;margin-bottom:16px;flex-wrap:wrap}
+footer .logos img{height:60px;width:auto}
+.soc{display:flex;gap:8px;margin-top:14px}
+.soc a{width:42px;height:42px;border:1px solid var(--line2);border-radius:var(--r);display:grid;place-items:center}
+.soc a:hover{border-color:var(--red);color:#fff}.soc svg{width:20px;height:20px}
+.legal{border-top:1px solid var(--line);margin-top:36px;padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px}
+
+/* floating */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:40;display:none;grid-template-columns:repeat(3,1fr);background:#000;border-top:1px solid var(--line2);padding-bottom:env(safe-area-inset-bottom)}
+.dock a{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 4px 9px;text-decoration:none;font:700 13px/1 var(--disp);letter-spacing:.12em;text-transform:uppercase}
+.dock a+a{border-left:1px solid var(--line)}
+.dock a.r{background:var(--red)}
+.dock svg{width:22px;height:22px}
+.fab{position:fixed;right:22px;bottom:22px;z-index:40;width:60px;height:60px;border-radius:50%;background:#1faa59;display:grid;place-items:center;box-shadow:0 10px 30px -8px #000;transition:transform .2s}
+.fab:hover{transform:scale(1.08)}.fab svg{width:32px;height:32px;color:#fff}
+
+/* reveal */
+.rvl{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
+.rvl.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rvl{opacity:1;transform:none}}
+
+@media (max-width:1020px){
+  nav.links{position:fixed;inset:74px 0 auto 0;background:#0b0c0e;flex-direction:column;padding:10px 24px 24px;border-bottom:1px solid var(--line);display:none;margin:0;max-height:calc(100dvh - 74px);overflow:auto}
+  nav.links.open{display:flex}
+  nav.links a{padding:16px 0;border-bottom:1px solid var(--line);font-size:22px}
+  .burger{display:grid}.nav .btn{display:none}
+  .about,.faq,.contact,.m-body{grid-template-columns:1fr}
+  .gal{position:static}
+  .appt{grid-template-columns:1fr}
+  .fg{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  section{padding:64px 0}
+  .top .grp.hide{display:none}
+  .top .wrap{justify-content:center}
+  .hero{min-height:0}.hero .wrap{padding-top:54px;padding-bottom:40px}
+  .hero::after{background:linear-gradient(0deg,var(--bg) 0,rgba(6,7,8,.8) 45%,rgba(6,7,8,.6) 100%)}
+  .gauges{grid-template-columns:1fr 1fr}.gauges b{font-size:34px}
+  .cta .btn{flex:1 1 100%}
+  form{grid-template-columns:1fr;padding:20px}
+  .types span{font-size:13px;padding:13px 4px}
+  .info{padding:22px 18px}.info ul{columns:1}.info h3{font-size:32px}
+  .fg{grid-template-columns:1fr}
+  .dock{display:grid}.fab{display:none}
+  .rate b{font-size:64px}
+  .bay{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <div class="grp">
+      <span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.500C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><a href="#contact">Greenhills Road, Dublin 12 · D12 K303</a></span>
+    </div>
+    <div class="grp hide">
+      <span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Car Clinic 09:00 – 18:00 · Sales 09:00 – 17:00</span>
+      <span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><a href="tel:+353857553430">085 755 3430</a></span>
+    </div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Starline Motors home"><img src="img/logo.webp" alt="Starline Motors: quality used cars and commercials" width="640" height="226"></a>
+    <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    <nav class="links" id="menu">
+      <a href="#services">Car Clinic</a>
+      <a href="#cars">View Cars</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+    <a class="btn btn-red btn-sm" href="#contact">Book In</a>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="vid" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="kicker">Greenhills Road · Dublin 12</span>
+    <h1>Fixed right. <em>Sold honest.</em></h1>
+    <p class="lead">Starline Motors and the Car Clinic under one roof: servicing, diagnostics, NCT prep and major repairs, plus quality used cars and commercials you can trust. Your satisfaction drives everything we do.</p>
+    <div class="cta">
+      <a class="btn btn-red" href="#contact" data-type="service">Book a Service</a>
+      <a class="btn btn-line" href="#cars">View Cars</a>
+      <a class="btn btn-line" href="tel:+353857553430"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>085 755 3430</a>
+    </div>
+    <div class="gauges">
+      <div><b><span data-n="rating">4.9</span><i>★</i></b><span><span data-n="total">46</span> Google reviews</span></div>
+      <div><b>10<i>+</i></b><span>Years of auto repair</span></div>
+      <div><b>OE</b><span>Standard parts, always</span></div>
+      <div><b data-n="stock">17</b><span>Cars in stock now</span></div>
+    </div>
+  </div>
+</div>
+
+<a class="ticker" href="#contact" data-type="viewing" aria-label="Book a viewing or test drive"><div id="tick"></div></a>
+
+<section id="services">
+  <span class="bay" aria-hidden="true">01</span>
+  <div class="wrap">
+    <div class="sec-h rvl">
+      <div><span class="kicker">The Car Clinic</span><h2>Quality auto <em>repair services</em></h2></div>
+      <p>Experience excellence in car repair and maintenance with Car Clinic. Our team of skilled technicians uses the latest tools and technology to ensure your car performs at its best.</p>
+    </div>
+    <div class="svc" id="svc"></div>
+
+    <div class="appt rvl">
+      <div class="l">
+        <img src="img/car-clinic.webp" alt="Car Clinic at Starline Motors" width="900" height="392" loading="lazy">
+        <h3>Online appointments</h3>
+        <p>Pick a job, tell us about the car and we will confirm a slot. Every appointment starts with a one hour bay booking. Price varies by vehicle and we quote before any work begins.</p>
+        <a class="btn btn-red btn-sm" href="#contact" data-type="service">Book a slot</a>
+      </div>
+      <ul id="appt"></ul>
+    </div>
+  </div>
+</section>
+
+<div class="hazard" aria-hidden="true"></div>
+
+<section id="cars">
+  <span class="bay" aria-hidden="true">02</span>
+  <div class="wrap">
+    <div class="sec-h rvl">
+      <div><span class="kicker">Quality used cars &amp; commercials</span><h2>Find your <em>dream car</em></h2></div>
+      <p>Every car is fully motor checked, serviced and ready to go. Finance available, trade-ins welcome, viewing by appointment.</p>
+    </div>
+    <div class="tools">
+      <input type="search" id="q" placeholder="Search make or model" aria-label="Search cars">
+      <div class="seg" role="group" aria-label="Availability">
+        <button data-st="avail" aria-pressed="true">In stock</button><button data-st="sold" aria-pressed="false">Sold</button><button data-st="all" aria-pressed="false">All</button>
+      </div>
+      <select id="sort" aria-label="Sort cars">
+        <option value="new">Newest listed</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option><option value="yr">Year: newest</option>
+      </select>
+    </div>
+    <div class="chips" id="makes" role="group" aria-label="Filter by make"></div>
+    <div class="count" id="count" aria-live="polite"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section id="about">
+  <span class="bay" aria-hidden="true">03</span>
+  <div class="wrap">
+    <div class="sec-h rvl">
+      <div><span class="kicker">About us</span><h2>More than just <em>a dealership</em></h2></div>
+    </div>
+    <div class="about">
+      <div class="rvl">
+        <p>Welcome to Starline Motors, proudly located on Greenhills Road, where we are dedicated to being more than just a car dealership. We’re your trusted partner for all your automotive needs. With a reputation for excellence, we offer an extensive range of high-quality vehicles, catering to every lifestyle and budget. Whether you want to buy cars for daily use or family outings, we have you covered.</p>
+        <p>At Starline Motors, customer satisfaction is our top priority. Our experienced and approachable team is here to guide you through every step of the process, from selecting the perfect vehicle to exploring competitive car financing solutions tailored just for you. We pride ourselves on transparency, ensuring you get clear and honest advice without any unnecessary pressure.</p>
+        <p>But our commitment doesn’t stop at the sale. We offer comprehensive after-sales support, including servicing, repairs, and maintenance, to keep your vehicle in peak condition. Our modern facilities, equipped with state-of-the-art tools, ensure your car receives the best care possible.</p>
+        <p>We don’t just sell cars. We create lasting relationships built on trust, quality, and unmatched service. Experience the excitement of a test drive in Dublin and discover why we are Greenhills Road’s favourite car dealership.</p>
+        <div class="cta"><a class="btn btn-red" href="#contact" data-type="viewing">Book a Viewing</a><a class="btn btn-line" href="#services">Car Clinic</a></div>
+      </div>
+      <div class="rvl">
+        <div class="vidbox" id="vidbox"><button aria-label="Play the Car Clinic video"><span><svg viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg></span></button></div>
+        <div class="pill">
+          <article><h3>Our story</h3><p>At Car Clinic, we have been providing top-quality auto repair services to the community for over 10 years. Our experienced technicians are committed to delivering exceptional customer service and ensuring your vehicle is running smoothly.</p></article>
+          <article><h3>Our guarantee</h3><p>We offer an outstanding turnaround, making sure you are not without your vehicle for a long period of time. Warranty varies on all parts fitted. OE standard, always.</p></article>
+          <article><h3>All under one roof</h3><p>With the Car Clinic on-site, you can trust us not only to help you find your dream car but also to keep it in perfect condition for years to come.</p></article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <span class="bay" aria-hidden="true">04</span>
+  <div class="wrap">
+    <div class="sec-h rvl">
+      <div><span class="kicker">See what our clients say</span><h2>Word of <em>mouth</em></h2></div>
+      <div class="rate">
+        <b data-n="rating">4.9</b>
+        <div><div class="stars" aria-hidden="true">★★★★★</div><small>from <span data-n="total">46</span> reviews on Google</small></div>
+        <div class="rvnav"><button id="rp" aria-label="Previous reviews">←</button><button id="rn" aria-label="More reviews">→</button></div>
+      </div>
+    </div>
+    <div class="rv" id="rv" tabindex="0" aria-label="Customer reviews"></div>
+  </div>
+</section>
+
+<section id="faq">
+  <span class="bay" aria-hidden="true">05</span>
+  <div class="wrap">
+    <div class="sec-h rvl">
+      <div><span class="kicker">Frequently asked questions</span><h2>Straight <em>answers</em></h2></div>
+      <p>Can’t find an answer to your question? Reach us at <a href="mailto:starlinemotorssales@gmail.com">starlinemotorssales@gmail.com</a>.</p>
+    </div>
+    <div class="faq">
+      <div class="rvl"><h3>Garage &amp; repairs</h3><div id="fq1"></div></div>
+      <div class="rvl"><h3>Buying a car</h3><div id="fq2"></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="hazard" aria-hidden="true"></div>
+
+<section id="contact">
+  <span class="bay" aria-hidden="true">06</span>
+  <div class="wrap">
+    <div class="sec-h rvl">
+      <div><span class="kicker">Get in touch</span><h2>Book a service or <em>a test drive</em></h2></div>
+      <p>Drop us a line, or better yet, see us in person. We love our customers, so feel free to visit during normal business hours.</p>
+    </div>
+    <div class="contact">
+      <form id="form" novalidate>
+        <div class="types full" role="radiogroup" aria-label="What do you need?">
+          <label><input type="radio" name="type" value="service" checked><span>Service / repair</span></label>
+          <label><input type="radio" name="type" value="viewing"><span>Viewing / test drive</span></label>
+          <label><input type="radio" name="type" value="general"><span>General enquiry</span></label>
+        </div>
+        <label>Name<input name="name" autocomplete="name" required></label>
+        <label>Phone<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required></label>
+        <label class="full">Email<input name="email" type="email" autocomplete="email"></label>
+        <label id="l-svc">Service needed<select name="service"></select></label>
+        <label id="l-reg">Your car (make, model, reg)<input name="vehicle" placeholder="e.g. Ford Focus 191-D-12345"></label>
+        <label id="l-car" class="full" hidden>Car you’re interested in<select name="car"></select></label>
+        <label class="full">Preferred day<input name="day" type="date"></label>
+        <label class="full">Message<textarea name="msg" placeholder="Tell us what’s going on with the car, or what you’re looking for"></textarea></label>
+        <div class="send full">
+          <button class="btn btn-wa" type="submit" data-via="wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.100L2 22l5-1.300A10 10 0 1 0 12 2zm5.8 14.200c-.200.7-1.4 1.3-1.9 1.4-.500.1-1.1.100-1.8-.100-.400-.100-1-.300-1.6-.600-2.9-1.2-4.7-4.1-4.9-4.3-.100-.200-1.2-1.5-1.2-2.900s.700-2.1 1-2.400c.300-.300.6-.300.8-.300h.500c.200 0 .400-.100.7.500l.900 2.200c.100.2.100.4 0 .600l-.300.5-.500.500c-.200.2-.300.3-.100.6.200.3.800 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.300.1.500.1.600-.100l.800-1c.200-.300.4-.200.7-.100l2 1c.300.1.500.2.600.3.100.3.100.8-.100 1.400z"/></svg>Send on WhatsApp</button>
+          <button class="btn btn-line" type="submit" data-via="mail">Send by Email</button>
+        </div>
+        <p class="hint full" id="hint">Your message opens in WhatsApp or your email app, ready to send. We reply as soon as we’re out from under the bonnet.</p>
+      </form>
+
+      <div class="side">
+        <div class="box">
+          <h3>Call us</h3>
+          <small>Garage &amp; general</small>
+          <a class="big" href="tel:+353857553430">085 755 3430</a>
+          <small style="margin-top:14px">Sales team · 9am to 7pm</small>
+          <a class="big" href="tel:+353852258335">085 225 8335</a>
+          <div class="cta" style="margin-top:18px"><a class="btn btn-wa btn-sm" href="https://wa.me/353857553430" target="_blank" rel="noopener">Message us on WhatsApp</a></div>
+        </div>
+        <div class="box">
+          <h3>Hours</h3>
+          <dl>
+            <dt>Car Clinic</dt><dd>09:00 – 18:00</dd>
+            <dt>Car sales</dt><dd>09:00 – 17:00</dd>
+            <dt>Viewings</dt><dd>By appointment</dd>
+          </dl>
+        </div>
+        <div class="box">
+          <h3>Find us</h3>
+          <p style="margin-bottom:14px">Starline Motors &amp; Car Clinic<br>Greenhills Road, Kilnamanagh,<br>Dublin 12, D12 K303, Ireland</p>
+          <a class="btn btn-line btn-sm" href="https://www.google.com/maps/dir/?api=1&destination=Starline+Car+Clinic%2C+Greenhills+Rd%2C+Dublin+D12+K303" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+    </div>
+    <div class="map rvl" style="margin-top:30px"><iframe title="Map showing Starline Motors on Greenhills Road" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Starline+Car+Clinic,+Greenhills+Rd,+Dublin+D12+K303&z=15&output=embed"></iframe></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fg">
+      <div>
+        <div class="logos"><img src="img/logo.webp" alt="Starline Motors" width="640" height="226" loading="lazy"><img src="img/car-clinic.webp" alt="Car Clinic at Starline Motors" width="900" height="392" loading="lazy"></div>
+        <p>Quality used cars &amp; commercials, with expert servicing and repairs at the Car Clinic on-site.</p>
+        <div class="soc">
+          <a href="https://www.facebook.com/p/Starline-Motors-61555278196141/" target="_blank" rel="noopener" aria-label="Starline Motors on Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9V7c0-1 .300-1.5 1.6-1.500H17V2h-2.600C11.3 2 10 3.8 10 6.500V9H7.500v3.500H10V22h4v-9.500h2.700L17 9z"/></svg></a>
+          <a href="https://www.instagram.com/starline_motors_sales/" target="_blank" rel="noopener" aria-label="Starline Motors on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="https://wa.me/353857553430" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21l1.6-5A8.5 8.5 0 1 1 8 19.400z"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="#services">Car Clinic services</a></li><li><a href="#cars">View cars</a></li><li><a href="#about">About us</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+353857553430">085 755 3430</a></li><li><a href="tel:+353852258335">Sales: 085 225 8335</a></li><li><a href="mailto:starlinemotorssales@gmail.com">starlinemotorssales@gmail.com</a></li><li><a href="#contact">Book in</a></li></ul></div>
+      <div><h4>Visit</h4><ul><li>Greenhills Road, Kilnamanagh</li><li>Dublin 12, D12 K303</li><li>Car Clinic 09:00 – 18:00</li><li>Sales 09:00 – 17:00</li></ul></div>
+    </div>
+    <div class="legal"><span>Copyright © <span id="yr">2026</span> Starline Motors. All rights reserved.</span><span>Website by <a href="https://almlabmarketing.com/" target="_blank" rel="noopener">AlmLab</a></span></div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/353857553430" target="_blank" rel="noopener" aria-label="Message us on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.100L2 22l5-1.300A10 10 0 1 0 12 2zm5.8 14.200c-.200.7-1.4 1.3-1.9 1.4-.500.1-1.1.100-1.8-.100-.400-.100-1-.300-1.6-.600-2.9-1.2-4.7-4.1-4.9-4.3-.100-.200-1.2-1.5-1.2-2.900s.700-2.1 1-2.400c.300-.300.6-.300.8-.300h.500c.200 0 .400-.100.7.500l.900 2.200c.100.2.100.4 0 .600l-.300.5-.500.500c-.200.2-.300.3-.100.6.200.3.800 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.300.1.500.1.600-.100l.800-1c.200-.300.4-.200.7-.100l2 1c.300.1.500.2.600.3.100.3.100.8-.100 1.400z"/></svg></a>
+<div class="dock">
+  <a href="tel:+353857553430"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Call</a>
+  <a href="https://wa.me/353857553430" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21l1.6-5A8.5 8.5 0 1 1 8 19.400z"/></svg>WhatsApp</a>
+  <a class="r" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>Book in</a>
+</div>
+
+<dialog id="dlg" aria-labelledby="m-t">
+  <button class="m-x" aria-label="Close">×</button>
+  <div class="m-body">
+    <div class="gal">
+      <div class="main"><img id="m-img" alt=""><button class="arr p" aria-label="Previous photo">‹</button><button class="arr n" aria-label="Next photo">›</button></div>
+      <div class="thumbs" id="m-th"></div>
+    </div>
+    <div class="info" id="m-info"></div>
+  </div>
+</dialog>
+
+<script src="data.js"></script>
+<script>
+(()=>{
+const D=window.STARLINE||{cars:[],reviews:[],rating:4.9,total:46};
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const eur=n=>'€'+n.toLocaleString('en-IE');
+const WA='353857553430', MAIL='starlinemotorssales@gmail.com';
+$('#yr').textContent=new Date().getFullYear();
+
+/* ---------- services ---------- */
+const I={
+ gear:'<circle cx="12" cy="12" r="3.2"/><path d="M12 2.500v3M12 18.500v3M2.5 12h3M18.5 12h3M5.3 5.300l2.1 2.100M16.6 16.600l2.1 2.100M5.3 18.700l2.1-2.100M16.6 7.400l2.1-2.1"/>',
+ susp:'<path d="M8 3h8M8 21h8M12 3v2M12 19v2M8 6.500l8 2.5-8 2.5 8 2.5-8 2.5"/>',
+ exh:'<path d="M2 13h4l2-2h8v6H8l-2-2H2zM16 12.500h4M16 15.500h4M21 9c1 0 1-2 0-2.500M18.5 9c1 0 1-2 0-2.5"/>',
+ fuel:'<path d="M4 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16M3 21h12M6.5 7h5v4h-5zM14 9l4 3v6a1.5 1.5 0 0 0 3 0v-8l-3-3"/>',
+ diag:'<rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M6 11h3l1.5-3 2.5 5 1.5-2H18M9 20h6M12 16v4"/>',
+ eng:'<path d="M7 9V6h6v3M9 6V4h2M4 12v5M4 14.500h3M7 9h9l2 3h2v6h-2l-1 2H9l-2-2z"/>',
+ brake:'<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3"/><path d="M12 3.500v2M12 18.500v2M3.5 12h2M18.5 12h2"/>',
+ batt:'<rect x="3" y="7" width="18" height="12" rx="1.5"/><path d="M7 7V5M17 7V5M6.5 13h3M15 13h3M16.5 11.500v3"/>',
+ nct:'<path d="M9 4h6l1 2h3v15H5V6h3zM8.5 13l2.5 2.5 4.5-5"/>',
+ belt:'<circle cx="7" cy="8" r="3.5"/><circle cx="17" cy="16" r="3.5"/><path d="M4.5 10.500l10 8M9.5 5.500l10 8"/>',
+ oil:'<path d="M3 11h5l2-3h4v3l6-2-3 9H8l-1-3H3zM20.5 14c.800 1.2 1.2 1.9 1.2 2.600a1.2 1.2 0 0 1-2.4 0c0-.700.4-1.4 1.2-2.600z"/>'
+};
+const SV=[
+ ['Gearbox / Transmission Repair','gear','Expert gearbox repair services with fast turnaround, high-quality parts, and experienced technicians to get your vehicle back on the road smoothly and efficiently.','Gearbox/Transmission'],
+ ['Suspension Repair','susp','If you’re experiencing a bumpy ride or unusual handling, your suspension system may be in need of repair. Let our experts diagnose and fix the issue.','Suspension'],
+ ['Exhaust System Services','exh','A faulty exhaust system can lead to decreased performance and even dangerous emissions. We offer a range of exhaust system services to keep you safe and on the road.','Other'],
+ ['Fuel System Services','fuel','If you’re experiencing issues with your fuel system, such as poor fuel economy or difficulty starting your vehicle, let us diagnose and fix the issue.','Other'],
+ ['Diagnostic Services','diag','If you’re not sure what’s wrong with your vehicle, bring it in for our diagnostic services. Our experts will diagnose the issue and recommend the necessary repairs.','Diagnostic & Routine Maintenance'],
+ ['Engine Repair','eng','Our skilled technicians can diagnose and repair any engine problem. From oil changes to complete engine overhauls, we have you covered.','Engine'],
+ ['Brake Services','brake','Don’t neglect your brakes. Let us keep them in top condition. Our brake services include brake pad and rotor replacement, brake line repair, and more.','Brakes'],
+ ['Battery','batt','Reliable car batteries with long-lasting performance, quick installation, and warranties to keep your vehicle powered in any condition.','Battery'],
+ ['Pre / Post NCT','nct','Comprehensive pre- and post-NCT checks to ensure your car passes inspection with ease, addressing issues beforehand and verifying everything is road-ready afterward.','Pre NCT'],
+ ['Timing Belt','belt','Professional timing belt replacement to ensure your engine runs smoothly, preventing costly damage with quality parts and expert installation.','Timing Belt'],
+ ['Routine Maintenance','oil','Regular maintenance is the key to keeping your vehicle running smoothly and avoiding costly repairs. Let us handle your oil changes, tune-ups, and more.','Interim Service']
+];
+const APPT=['Pre NCT','Post NCT','Diagnostic & Routine Maintenance','Brakes','Suspension','Engine','Transmission','Battery','Interim Service','Timing Belt','Gearbox/Transmission','Other'];
+$('#svc').innerHTML=SV.map((s,i)=>`<article class="card rvl"><span class="no">${String(i+1).padStart(2,'0')}</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${I[s[1]]}</svg></div><h3>${s[0]}</h3><p>${s[2]}</p><button type="button" data-book="${esc(s[3])}">Book this job</button></article>`).join('');
+$('#appt').innerHTML=APPT.map(a=>`<li><div><b>${esc(a)}</b><small>1 hr · Price varies</small></div><button class="btn btn-line btn-sm" type="button" data-book="${esc(a)}">Book</button></li>`).join('');
+$('#tick').innerHTML=Array(12).fill('<span>Press here to book a viewing / test drive</span>').join('');
+
+/* ---------- FAQ ---------- */
+const F1=[
+ ['How often should I get my oil changed?','We recommend getting your oil changed every 5,000 miles or every six months, whichever comes first. This can help keep your engine running smoothly and prevent damage.'],
+ ['Do I need to schedule an appointment?','While we do accept walk-ins, we highly recommend scheduling an appointment to ensure timely service. You can book an appointment by calling us or through the booking form on this website.'],
+ ['How long will my repair take?','The time required for repairs depends on the complexity of the issue. Simple services like oil changes and tyre rotations can often be completed within an hour, while more complex repairs may take several hours or even a full day. We will provide you with an estimated timeline when you bring your vehicle in.'],
+ ['How much will my repair cost?','Repair costs vary depending on the type of service and the parts required. After diagnosing the issue, we will provide you with a detailed estimate before any work begins. We strive to offer competitive pricing and ensure transparency with no hidden fees.'],
+ ['Are you certified to work on my make and model?','Our technicians are certified and experienced in working on a wide range of vehicle makes and models, including domestic and foreign brands. We undergo regular training to stay up-to-date with the latest automotive technology and repair techniques.'],
+ ['Do you offer emergency or after-hours services?','We understand that car trouble can happen at any time. While we do not offer 24/7 services, we can assist with towing and provide emergency repairs during business hours. For after-hours emergencies, please contact a local towing service to bring your vehicle to our garage, and we will attend to it as soon as we open.'],
+ ['What payment methods do you accept?','We accept a variety of payment methods, including cash, major credit cards, and debit cards. If you need to discuss alternative payment options, please let us know in advance.'],
+ ['How can I check the status of my repair?','You can call us at any time during business hours to check the status of your repair. We’ll provide you with updates and let you know when your vehicle is ready for pickup. Additionally, we may offer text or email updates for your convenience.'],
+ ['How do I contact you?','You can reach us by phone, email, WhatsApp or through this website. See the Contact Us section for our phone numbers, email address, and business hours. We’re always happy to answer any questions or assist with scheduling an appointment.']
+];
+const F2=[
+ ['What types of cars do you sell?','We sell a wide range of cars including saloons, SUVs, trucks, and sports cars.'],
+ ['Do you offer financing options?','Yes, we offer financing options through various banks and financing companies. Contact us for more information.'],
+ ['Do you accept trade-ins?','Yes, we accept trade-ins. Contact us with information on your current vehicle and we’ll provide a trade-in value.'],
+ ['Can I schedule a test drive?','Of course! Test drives are available by appointment. Reach out to book yours today.'],
+ ['Do you deliver cars?','Yes, we offer delivery options for your convenience. Contact us to learn more.']
+];
+const fq=a=>a.map(f=>`<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join('');
+$('#fq1').innerHTML=fq(F1); $('#fq2').innerHTML=fq(F2);
+
+/* ---------- numbers ---------- */
+const avail=D.cars.filter(c=>!c.sold);
+$$('[data-n=rating]').forEach(e=>e.textContent=D.rating.toFixed(1));
+$$('[data-n=total]').forEach(e=>e.textContent=D.total);
+$$('[data-n=stock]').forEach(e=>e.textContent=avail.length);
+
+/* ---------- cars ---------- */
+const st={q:'',make:'All',status:'avail',sort:'new'};
+const makes=['All',...[...new Set(D.cars.map(c=>c.make))].sort()];
+$('#makes').innerHTML=makes.map(m=>`<button type="button" data-make="${esc(m)}" aria-pressed="${m==='All'}">${esc(m)}</button>`).join('');
+const specs=c=>[c.year,c.fuel,c.trans,c.mileage].filter(Boolean).map(s=>`<span>${esc(s)}</span>`).join('');
+const newest=avail.slice(0,3).map(c=>c.id);
+function draw(){
+  let L=D.cars.filter(c=>(st.status==='all'||(st.status==='sold')===c.sold)&&(st.make==='All'||c.make===st.make)&&(!st.q||(c.title+' '+c.head+' '+c.make).toLowerCase().includes(st.q)));
+  const by={new:(a,b)=>b.added.localeCompare(a.added),lo:(a,b)=>a.price-b.price,hi:(a,b)=>b.price-a.price,yr:(a,b)=>(b.year||0)-(a.year||0)}[st.sort];
+  L=[...L].sort((a,b)=>(a.sold-b.sold)||by(a,b));
+  $('#count').textContent=L.length+(L.length===1?' vehicle':' vehicles')+(st.make!=='All'?' · '+st.make:'');
+  $('#grid').innerHTML=L.length?L.map(c=>`<button type="button" class="car${c.sold?' sold':''}" data-id="${c.id}" aria-label="${esc(c.title)}, ${c.sold?'sold':eur(c.price)}">
+    <div class="ph">${c.imgs[0]?`<img src="${c.imgs[0].replace('-0.webp','-t.webp')}" alt="${esc(c.title)}" loading="lazy" width="640" height="480">`:''}${c.sold?'<span class="stamp">SOLD</span>':newest.includes(c.id)?'<span class="tag">Just in</span>':''}${!c.sold&&c.imgs.length>1?`<span class="pc">${c.imgs.length} photos</span>`:''}</div>
+    <div class="bd"><h3>${esc(c.title)}</h3><div class="specs">${specs(c)}</div><div class="ft"><span class="price">${eur(c.price)}</span><span class="more">${c.sold?'Sold':'Details →'}</span></div></div></button>`).join('')
+   :`<div class="empty">Nothing matches that just now. Stock changes every week, so <a href="#contact">tell us what you’re after</a> and we’ll keep an eye out.</div>`;
+}
+$('#q').addEventListener('input',e=>{st.q=e.target.value.trim().toLowerCase();draw()});
+$('#sort').addEventListener('change',e=>{st.sort=e.target.value;draw()});
+$('#makes').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;st.make=b.dataset.make;$$('#makes button').forEach(x=>x.setAttribute('aria-pressed',x===b));draw()});
+$$('.seg button').forEach(b=>b.addEventListener('click',()=>{st.status=b.dataset.st;$$('.seg button').forEach(x=>x.setAttribute('aria-pressed',x===b));draw()}));
+draw();
+
+/* ---------- modal ---------- */
+const dlg=$('#dlg');let cur=null,ix=0;
+function show(i){ix=(i+cur.imgs.length)%cur.imgs.length;$('#m-img').src=cur.imgs[ix];$('#m-img').alt=cur.title+' photo '+(ix+1);$$('#m-th button').forEach((b,k)=>b.setAttribute('aria-current',k===ix))}
+function openCar(id){
+  cur=D.cars.find(c=>c.id===id);if(!cur)return;
+  $('#m-th').innerHTML=cur.imgs.length>1?cur.imgs.map((s,k)=>`<button type="button" data-k="${k}" aria-label="Photo ${k+1}"><img src="${s}" alt="" loading="lazy"></button>`).join(''):'';
+  $$('.gal .arr').forEach(a=>a.hidden=cur.imgs.length<2);
+  const msg=encodeURIComponent(`Hi Starline Motors, I'm interested in the ${cur.title} (${eur(cur.price)}). Is it still available?`);
+  $('#m-info').innerHTML=`<div class="specs">${specs(cur)}</div><h3 id="m-t">${esc(cur.title)}</h3><div class="sub">${esc(cur.head)}</div>
+   <span class="price"${cur.sold?' style="color:var(--mut);text-decoration:line-through"':''}>${eur(cur.price)}</span>
+   <div class="acts">${cur.sold?`<a class="btn btn-red btn-sm" href="#contact" data-type="viewing" data-close>Find me one like it</a>`:`<a class="btn btn-red btn-sm" href="#contact" data-type="viewing" data-car="${esc(cur.title)}" data-close>Book a viewing</a><a class="btn btn-wa btn-sm" href="https://wa.me/${WA}?text=${msg}" target="_blank" rel="noopener">WhatsApp</a><a class="btn btn-line btn-sm" href="tel:+353852258335">Call sales</a>`}</div>
+   ${cur.sold?'<p><strong>This one has found a new home.</strong> Tell us what you liked about it and we’ll look out for the next one.</p>':''}
+   ${cur.intro.map(p=>`<p>${esc(p)}</p>`).join('')}
+   ${cur.feats.length?`<h4>Spec &amp; details</h4><ul>${cur.feats.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>`:''}
+   <p class="note">Viewing by appointment on Greenhills Road, Dublin 12. Sales team available 9am to 7pm on 085 225 8335.</p>`;
+  show(0);dlg.showModal();dlg.querySelector('.m-body').scrollTop=0;
+}
+$('#grid').addEventListener('click',e=>{const b=e.target.closest('.car');if(b)openCar(b.dataset.id)});
+$('#m-th').addEventListener('click',e=>{const b=e.target.closest('button');if(b)show(+b.dataset.k)});
+$('.arr.p').onclick=()=>show(ix-1);$('.arr.n').onclick=()=>show(ix+1);
+$('.m-x').onclick=()=>dlg.close();
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+dlg.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(ix-1);if(e.key==='ArrowRight')show(ix+1)});
+let tx=0;$('.gal .main').addEventListener('touchstart',e=>tx=e.touches[0].clientX,{passive:true});
+$('.gal .main').addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>40)show(ix+(d<0?1:-1))});
+
+/* ---------- reviews ---------- */
+const mon=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+$('#rv').innerHTML=D.reviews.map(r=>{const d=r.date.split('-');const body=r.body.replace(/^[⭐\s]+/,'');
+  return `<figure><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>${esc(body)}</blockquote>${body.length>420?'<button class="rm" type="button">Read full review</button>':''}<figcaption><span class="av">${esc(r.name[0].toUpperCase())}</span><span><b>${esc(r.name)}</b><small>Google review · ${mon[+d[1]-1]} ${d[0]}</small></span></figcaption></figure>`}).join('');
+$('#rv').addEventListener('click',e=>{const b=e.target.closest('.rm');if(b){b.parentElement.classList.add('open');b.remove()}});
+const rv=$('#rv');$('#rp').onclick=()=>rv.scrollBy({left:-420,behavior:'smooth'});$('#rn').onclick=()=>rv.scrollBy({left:420,behavior:'smooth'});
+
+/* ---------- form ---------- */
+const f=$('#form');
+f.service.innerHTML='<option value="">Choose a service</option>'+APPT.map(a=>`<option>${esc(a)}</option>`).join('');
+f.car.innerHTML='<option value="">Any / not sure yet</option>'+avail.map(c=>`<option value="${esc(c.title)}">${esc(c.title)} · ${eur(c.price)}</option>`).join('');
+f.day.min=new Date().toISOString().slice(0,10);
+function mode(){const t=f.type.value;$('#l-svc').hidden=t!=='service';$('#l-reg').hidden=t!=='service';$('#l-car').hidden=t!=='viewing'}
+f.addEventListener('change',mode);mode();
+function preset(o){if(o.type){f.type.value=o.type}mode();if(o.service)f.service.value=o.service;if(o.car)f.car.value=o.car}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-book]');
+  if(b){preset({type:'service',service:b.dataset.book});$('#contact').scrollIntoView();setTimeout(()=>f.name.focus({preventScroll:true}),600);return}
+  const a=e.target.closest('a[data-type]');
+  if(a){preset({type:a.dataset.type,car:a.dataset.car});if(a.hasAttribute('data-close'))dlg.close()}
+});
+f.addEventListener('submit',e=>{
+  e.preventDefault();
+  const via=(e.submitter&&e.submitter.dataset.via)||'wa', t=f.type.value, hint=$('#hint');
+  if(!f.name.value.trim()||!f.phone.value.trim()){hint.textContent='Please add your name and phone number so we can get back to you.';hint.style.color='var(--red2)';(f.name.value.trim()?f.phone:f.name).focus();return}
+  const head={service:'Service / repair booking',viewing:'Viewing / test drive request',general:'General enquiry'}[t];
+  const L=[head,'','Name: '+f.name.value.trim(),'Phone: '+f.phone.value.trim()];
+  if(f.email.value.trim())L.push('Email: '+f.email.value.trim());
+  if(t==='service'){if(f.service.value)L.push('Service: '+f.service.value);if(f.vehicle.value.trim())L.push('Vehicle: '+f.vehicle.value.trim())}
+  if(t==='viewing'&&f.car.value)L.push('Car: '+f.car.value);
+  if(f.day.value)L.push('Preferred day: '+new Date(f.day.value+'T12:00').toLocaleDateString('en-IE',{weekday:'long',day:'numeric',month:'long'}));
+  if(f.msg.value.trim())L.push('','Message: '+f.msg.value.trim());
+  const body=L.join('\n');
+  hint.style.color='';hint.textContent=via==='wa'?'Opening WhatsApp with your message. Just press send there.':'Opening your email app with your message. Just press send there.';
+  const url=via==='wa'?`https://wa.me/${WA}?text=${encodeURIComponent(body)}`:`mailto:${MAIL}?subject=${encodeURIComponent(head+' from '+f.name.value.trim())}&body=${encodeURIComponent(body)}`;
+  if(via==='wa')window.open(url,'_blank','noopener');else location.href=url;
+});
+
+/* ---------- nav ---------- */
+const bg=$('.burger'),menu=$('#menu');
+bg.onclick=()=>{const o=menu.classList.toggle('open');bg.setAttribute('aria-expanded',o)};
+menu.addEventListener('click',e=>{if(e.target.tagName==='A'){menu.classList.remove('open');bg.setAttribute('aria-expanded',false)}});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+$$('.rvl').forEach(e=>io.observe(e));
+const secs=$$('main section[id]'),lk=$$('#menu a');
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)lk.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(s=>so.observe(s));
+
+/* ---------- video ---------- */
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(!reduce&&innerWidth>720&&!(navigator.connection&&navigator.connection.saveData)){
+  addEventListener('load',()=>setTimeout(()=>{
+    const fr=document.createElement('iframe');
+    fr.src='https://player.vimeo.com/video/1035188833?h=a052de9885&background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1';
+    fr.allow='autoplay';fr.title='';fr.tabIndex=-1;fr.onload=()=>setTimeout(()=>fr.classList.add('rdy'),1500);
+    $('.hero .vid').appendChild(fr);
+  },900));
+}
+$('#vidbox button').onclick=function(){
+  this.parentElement.innerHTML='<iframe src="https://player.vimeo.com/video/1012913629?h=f80ff07a85&autoplay=1&dnt=1" allow="autoplay; fullscreen" allowfullscreen title="Car Clinic at Starline Motors"></iframe>';
+};
+})();
+</script>
+</body>
+</html>
