@@ -447,3 +447,7 @@ ul.feats.one{columns:1}
 .detail>*,.two>*,.contact>*,.faq>*{min-width:0}
 @media (max-width:1060px){.two,.faq,.contact,.detail,.doors{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:720px){.mmenu{padding-top:104px}}
+.legal{align-items:center}
+.madeby{display:inline-flex;align-items:center;gap:6px;color:var(--mut);transition:opacity .2s}
+.madeby img{height:44px;width:auto}
+.madeby:hover{opacity:.8}

@@ -7,7 +7,7 @@ import json, os, html, re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = json.loads(open(os.path.join(ROOT, 'data.js'), encoding='utf8').read().split('=', 1)[1].rstrip().rstrip(';'))
 e = html.escape
-V = '8'  # bump to bust the browser cache for css/js
+V = '9'  # bump to bust the browser cache for css/js
 
 PH = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>'
 WAI = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.600 15.100L2 22l5-1.300A10 10 0 1 0 12 2zm5.800 14.200c-.200.700-1.400 1.300-1.900 1.400-.500.100-1.100.100-1.800-.100-.400-.100-1-.300-1.600-.600-2.900-1.200-4.700-4.100-4.900-4.300-.100-.200-1.200-1.500-1.200-2.900s.700-2.100 1-2.400c.300-.300.600-.300.800-.300h.500c.200 0 .400-.100.700.500l.900 2.200c.100.200.100.400 0 .600l-.300.500-.500.500c-.200.200-.300.300-.100.600.200.300.800 1.300 1.700 2.100 1.200 1 2.100 1.400 2.400 1.500.300.100.500.100.600-.100l.800-1c.200-.300.400-.200.700-.100l2 1c.300.100.500.200.600.300.100.300.100.800-.100 1.400z"/></svg>'
@@ -133,7 +133,7 @@ def page(slug, title, desc, body, intro=False):
     <div><h4>CONTACT</h4><ul><li><a href="tel:+353857553430">085 755 3430</a></li><li><a href="tel:+353852258335">Sales: 085 225 8335</a></li><li><a href="mailto:starlinemotorssales@gmail.com">starlinemotorssales@gmail.com</a></li><li><a href="contact">Book in</a></li></ul></div>
     <div><h4>VISIT</h4><ul><li>Greenhills Road, Kilnamanagh</li><li>Dublin 12, D12 K303</li><li>Car Clinic 09:00 – 18:00</li><li>Sales 09:00 – 17:00</li></ul></div>
   </div>
-  <div class="legal"><span>Copyright © <span data-yr>2026</span> Starline Motors. All rights reserved.</span><span>Website by <a href="https://almlabmarketing.com/" target="_blank" rel="noopener">AlmLab</a></span></div>
+  <div class="legal"><span>Copyright © <span data-yr>2026</span> Starline Motors. All rights reserved.</span><a class="madeby" href="https://almlabmarketing.com/" target="_blank" rel="noopener" aria-label="Made by AlmLab">Made by <img src="img/almlab-credit.png" alt="AlmLab" width="306" height="116" loading="lazy"></a></div>
 </div></footer>
 <a class="fab" href="https://wa.me/353857553430" target="_blank" rel="noopener" aria-label="Message us on WhatsApp">{WAI}</a>
 <div class="dock"><a href="tel:+353857553430">{PH}Call</a><a href="https://wa.me/353857553430" target="_blank" rel="noopener">{WAI}WhatsApp</a><a class="r" href="contact?type=service">{CAL}Book in</a></div>
